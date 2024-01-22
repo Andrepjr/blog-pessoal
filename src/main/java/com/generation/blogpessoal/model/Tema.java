@@ -27,6 +27,7 @@ public class Tema {
 	@NotNull(message = "O Atributo Descrição é obrigatório")
 	private String descricao;
 	
+	//MappedBy realiza a procura da foreign key, cascade remover informações relacionadas
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
